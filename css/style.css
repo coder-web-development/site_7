@@ -1,0 +1,1473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Обнуление убираем, иначе появится горизонтальный скроллер, в 1 пиксель, из-за ширины 
+границы в 1 пиксель для .header, .main, и .footer */
+/* Для того, чтобы скроллера не было, устанавливаем для всех элементов свойство 
+ box-sizing: border-box; */
+
+
+html {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    display: flex;
+}
+
+ul {
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    /* font-family: 'Google Sans', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    width: 100%;
+    max-width: 960px;
+    min-width: 200px;
+    margin: 0 auto;
+    background: #f1f1f1;
+    /* border: 1px solid red; */
+}
+
+.main {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 960px;
+    min-width: 200px;
+    margin: 0 auto;
+    /* border: 1px solid blue; */
+}
+
+.footer {
+    width: 100%;
+    max-width: 960px;
+    min-width: 200px;
+    margin: 0 auto;
+    /* border: 1px solid green; */
+}
+
+/* ------------------------- */
+
+.main {
+    display: flex;
+    /* Если ни задано свойство для родительского элемента display: flex, то при задании
+    ширины в дочернем элементе .container_welcom (960px) появляется горизонтальный скроллер */
+    flex-direction: column;
+    width: 100%;
+}
+
+/* ------------------------- */
+
+/* - Блок header - Урок 1 - Адаптивное меню */
+
+nav {
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+    /* border: 1px solid #aee90b; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#checkbox_menu,
+.toggle {
+    display: none;
+}
+
+.menu_touch {
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+
+.menu_touch li a {
+    color: #000;
+    text-decoration: none;
+    align-self: center;
+    font-size: 14px;
+    padding: 10px 10px;
+    transition: background 0.2s linear;
+}
+
+.menu_touch li a:hover {
+    background: #eecd37;
+    border-radius: 4px;
+}
+
+.menu_touch li a.logo {
+    font-size: 18px;
+    margin-right: 100px;
+}
+
+.menu_touch li a.contacts {
+    margin-right: 40px;
+}
+
+
+/* - Урок 2 - Flexbox для каждого - */
+
+.container_apartment {
+    max-width: 960px;
+    background: #fff;
+    color: #000;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.block_apartment {
+    /* border: 1px solid rgb(20, 233, 69); */
+    margin: 0 auto;
+}
+
+.block_fone {
+    background: url('../image/Apartament_block_img.png');
+    background-repeat: no-repeat;
+    height: 360px;
+    max-width: 960px;
+    /* border: 1px solid red; */
+
+    /* Для родительского элемента задаём display: flex; и задаём направление осей 
+    - горизонтальная ось - сдева направо - flex-direction: row;
+    - вертикальная ось - сверху вниз - flex-direction: column; */
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.apartment_text {
+    margin-top: 60px;
+    margin-left: 20px;
+    /* border: 1px solid red; */
+}
+
+.apartment_text p {
+    font-size: 36px;
+    line-height: 38px;
+}
+
+.apartment_contacts {
+    /* background-color: #eecd37; */
+    /* border: 1px solid rgb(23, 241, 23); */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    /* Задаём ширину и высоту блока для того чтобы позиционировать flex элемент, и прижать flex элемент 
+     справа и снизу */
+    max-width: 960px;
+    height: 250px;
+}
+
+.apartment_img_and_text {
+    display: flex;
+    background-color: #eecd37;
+}
+
+.apartment_contact_img {
+    margin: 12px 10px 10px 20px;
+    /* border: 1px solid blue; */
+}
+
+.apartment_contact_p {
+    margin: 15px 10px 10px 10px;
+    /* border: 1px solid blue; */
+}
+
+.apartment_img_and_text:nth-child(2) p {
+    margin-right: 13px;
+}
+
+
+/* Урок 3 - Адаптивный макет - Блок Статистика */
+
+.container_statistic {
+    max-width: 960px;
+    background: #fff;
+    color: #000;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.block_statistic {
+    /* border: 1px solid rgb(20, 233, 69); */
+    margin: 0 auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* border: 1px solid green; */
+}
+
+.statistic_content {
+    display: flex;
+
+}
+
+.statistic_content h2 {
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: normal;
+}
+
+.statistic_content p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.statistic_left h2:last-of-type {
+    /* color: red; */
+    margin-top: -4px;
+}
+
+.statistic_left {
+    /* border: 1px solid grey; */
+    margin: 10px;
+    padding-right: 10px;
+}
+
+.statistic_right {
+    /* border: 1px solid rgb(57, 57, 57); */
+    margin: 10px;
+}
+
+
+.statistic_line {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.square {
+    width: 140px;
+    height: 140px;
+    background: #dddcdb;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.square_number {
+    color: #eecd37;
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.square_text {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/* - Урок 4 - CSS Grid простыми словами - Блок room - Делал на флексах - */
+
+.container_room {
+    max-width: 960px;
+    background: #f5f3ef;
+    color: #000;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.block_room {
+    /* border: 1px solid rgb(20, 233, 69); */
+    margin: 0 auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* border: 1px solid green; */
+}
+
+.room_content {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 10px 0;
+}
+
+.block_room h2 {
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: normal;
+}
+
+.cards_room {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 960px;
+
+    margin: 0 auto;
+    /* border: 1px solid blue; */
+
+}
+
+.item_card_room {
+    margin: 0px 10px;
+    margin-bottom: 20px;
+    /* border: 1px solid red; */
+}
+
+.item_card_room_top {
+    /* width: 100%; */
+    /* width: 260px;
+    height: 360px; */
+}
+
+.item_card_room_top img.mw_100 {
+    width: 100%;
+}
+
+.item_card_room_bottom {
+    margin: 15px;
+}
+
+.item_card_room_bottom h4 {}
+
+.block_price {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    /* border: 1px solid green; */
+}
+
+.price_left {}
+
+.price_left p {
+    color: #eecd37;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.price_right {
+    display: flex;
+}
+
+.price_right p {
+    margin-top: 2px;
+}
+
+.room_form {
+    margin: 0 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+form.desktop {}
+
+.input_search {
+    padding: 15px 15px 15px 50px;
+    width: 260px;
+    border: 1px solid #aeadad;
+    font-size: 15px;
+    background: url('../image/Icon_search.png') no-repeat 5px 7px;
+}
+
+.submit_search {
+    padding: 15px 30px;
+    margin-left: 5px;
+    border: 1px solid #aeadad;
+    background: #eecd37;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.submit_search_all {
+    padding: 15px 30px;
+    margin-left: 30px;
+    border: 1px solid #aeadad;
+    font-size: 15px;
+}
+
+.submit_search_all:hover {
+    background: #eecd37;
+}
+
+form.mobile {
+    display: none;
+}
+
+
+/* Урок 5 - Java Script подключаем - Блок works */
+
+.container_work {
+    max-width: 960px;
+    background: #fff;
+    color: #000;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.block_work {
+    /* border: 1px solid rgb(20, 233, 69); */
+    margin: 0 auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* border: 1px solid green; */
+}
+
+.block_work h2 {
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: normal;
+    margin-left: 30px;
+}
+
+.block_work p {
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+
+.block_work p:nth-child(3) {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.block_work p:nth-child(4) {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.cards_work {
+    /* flex контейнер для 3-х карточек */
+    margin: 30px 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    max-width: 960px;
+    /* border: 1px solid blue; */
+}
+
+.card_work_item {
+    width: 250px;
+    height: auto;
+    /* Задаём высоту height:auto (по умолчанию для блока высота 300px) 
+    иначе при уменьшении окна браузера с высотой 300px наш контент обрезается */
+    margin: 10px 14px;
+    /* border: 1px solid red; */
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.card_work_item p.step_number {
+    font-size: 200px;
+    font-weight: bold;
+    position: relative;
+    top: 0px;
+    left: -80px;
+}
+
+.card_work_item:hover {
+    background: #eecd37;
+    color: #fff;
+}
+
+.card_work_item h4 {
+    font-size: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    /* border: 1px solid green; */
+}
+
+.card_work_item h4 span {
+    margin-right: 5px;
+}
+
+.card_work_item p.step_info {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 12px;
+    /* border: 1px solid green; */
+}
+
+.card_work_item p.step_info_last {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+    display: inline-block;
+    /* border: 1px solid green; */
+}
+
+.card_work_item p.step_info_last:hover {
+    border-bottom: 1px solid #fff;
+    /* border: 1px solid green; */
+}
+
+
+/* Урок 6 - Быстро на flexbox - Блок сервис - service */
+
+.container_service {
+    max-width: 960px;
+    background: #fff;
+    color: #000;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.block_service {
+    /* border: 1px solid rgb(20, 233, 69); */
+    margin: 0 auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* border: 1px solid green; */
+}
+
+.content_service {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+
+    max-width: 960px;
+    /* border: 1px solid blue; */
+}
+
+.block_service h2 {
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: normal;
+    margin-left: 30px;
+}
+
+.block_service p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+    font-size: 16px;
+}
+
+.block_service p:nth-of-type(2) {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.service_left {
+    /* border: 1px solid red; */
+    /* max-width: 400px;    */
+}
+
+.service_right {
+    /* border: 1px solid green; */
+    margin-left: 20px;
+    /* max-width: 400px; */
+}
+
+.service_left img.max_w100 {
+    width: 100%;
+}
+
+.service_right h3 {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.service_right p {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.service_right h3:nth-of-type(2),
+.service_right h3:nth-of-type(3) {
+    margin-top: 18px;
+}
+
+
+/* Урок 7 - Flexbox блоки - Блок агенты - agents */
+
+.container_agent {
+    max-width: 960px;
+    background: #f5f3ef;
+    color: #000;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.block_agent {
+    /* border: 1px solid rgb(20, 233, 69); */
+    margin: 0 auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* border: 1px solid green; */
+}
+
+
+.block_agent h2 {
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: normal;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+.block_agent p {
+    margin-top: 0px;
+    margin-bottom: 3px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 16px;
+}
+
+.block_agent p:nth-child(4) {
+    margin-bottom: 30px;
+}
+
+.cards_agent {
+    /* margin-top: 30px; */
+    margin-bottom: 4px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    max-width: 960px;
+    /* border: 1px solid blue; */
+}
+
+.item_card_agent {
+    width: 260px;
+    /* background: red; */
+    margin: 0px 15px 15px 0px;
+    /* border: 1px solid red; */
+    /* margin-bottom: 20px; */
+}
+
+.item_card_agent:nth-child(3) {
+    margin-right: 0;
+}
+
+.card_agent_top {}
+
+.card_agent_bottom {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.card_agent_top img.max_w100 {
+    width: 100%;
+}
+
+.card_agent_bottom p {
+    margin-left: 0;
+}
+
+.card_agent_bottom h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+.agent_properties {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.agent_properties_name {
+    /* border: 1px solid red;     */
+}
+
+.agent_properties_name p {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #eecd37;
+    margin-top: 4px;
+}
+
+.agent_properties_social {
+    /* border: 1px solid green; */
+    display: flex;
+}
+
+.agent_properties_social a {}
+
+.agent_properties_social a.social_1 {
+    background: url('../image/Agent_icon_social_1.png');
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+
+.agent_properties_social a.social_1:hover {
+    background: url('../image/Agent_icon_social_hover_1.png');
+}
+
+.agent_properties_social a.social_2 {
+    background: url('../image/Agent_icon_social_2.png');
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+
+.agent_properties_social a.social_2:hover {
+    background: url('../image/Agent_icon_social_hover_2.png');
+}
+
+.agent_properties_social a.social_3 {
+    background: url('../image/Agent_icon_social_3.png');
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+
+.agent_properties_social a.social_3:hover {
+    background: url('../image/Agent_icon_social_hover_3.png');
+}
+
+.agent_properties_social img {}
+
+
+/* Урок 8 - Адаптивность под экран iphoneX - блок awesome - Делал на флексах */
+
+.container_awesome {
+    max-width: 960px;
+    background: #fff;
+    color: #000;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.block_awesome {
+    /* border: 1px solid rgb(20, 233, 69); */
+    margin: 0 auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* border: 1px solid green; */
+}
+
+.lines_awesome {
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.line_awesome_1 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.line_awesome_2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.line_awesome_3 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.line_awesome_left {
+    width: 50%;
+    /* border: 1px solid red; */
+}
+
+.line_awesome_right {
+    width: 50%;
+    /* border: 1px solid green; */
+}
+
+.line_awesome_2 .line_awesome_left {
+    order: 2;
+}
+
+.line_awesome_2 .line_awesome_right {}
+
+.line_awesome_2 .awesome_right_text {
+    margin-left: 0;
+    margin-right: 40px;
+}
+
+
+.line_awesome_left img.max_w100 {
+    width: 100%;
+}
+
+.awesome_center_block {
+    background: #eecd37;
+    width: 65%;
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+    top: -26px;    
+}
+
+.img_and_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.img_and_text img {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.img_and_text p {}
+
+.awesome_right_text {
+    margin-left: 40px;
+    /* border: 1px solid red; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.awesome_right_text h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.awesome_right_text p {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+
+.awesome_center_block_link {
+    margin: 0 auto;
+    margin-top: 36px;
+}
+
+.block_link {}
+
+.block_link a {
+    background: #153332;
+    color: #fff;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+.block_link a:hover {
+    text-decoration: underline;
+}
+
+.block_link a.mobile {
+    display: none;
+}
+
+
+/* Урок 9 - Footer заканчиваем сайт - Делал на flexbox-ах */
+
+.container_footer {
+    max-width: 960px;
+    background: #123233;
+    color: #fff;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.block_footer {
+    /* border: 1px solid rgb(20, 233, 69); */
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    /* border: 1px solid rgb(20, 234, 20); */
+}
+
+.content_footer {
+    margin-left: 30px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid white; */
+}
+
+.footer_top {
+    /* border: 1px solid #ccc; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer_top_left {
+    width: 50%;
+    /* border: 1px solid red; */
+}
+
+.footer_top_right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    /* border: 1px solid rgb(25, 238, 25); */
+}
+
+.footer_bottom {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer_top_left h2 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+form {
+    margin-top: 7px;
+}
+
+.input_text {
+    height: 40px;
+    width: 220px;
+    padding-left: 20px;
+    border: none;
+}
+
+.input_button {
+    height: 40px;
+    width: 40px;
+    background: url('../image/Arrow_right_img.png') 8px 6px no-repeat #eeefef;
+    border: none;
+}
+
+.mobile {
+    display: none;
+}
+
+
+.footer_bottom_left {
+    width: 35%;
+    /* border: 1px solid rgb(239, 163, 163); */
+}
+
+.footer_bottom_right {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border: 1px solid rgb(245, 56, 56); */
+}
+
+.footer_bottom_left h2 {
+    font-size: 19px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.footer_bottom_right h3 {
+    font-size: 15px;
+    font-weight: 450;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer_bottom_right p {
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.footer_bottom_right p a {
+    color: #fff;
+}
+
+.footer_bottom_right p a:hover {
+    text-decoration: underline;
+}
+
+
+/* - Урок 1 - Адаптивное меню - Медиазапросы - */
+
+@media screen and (max-width:940px) {
+    .menu_touch li a.logo {
+        margin-right: 40px;
+    }
+
+    .menu_touch li a.contacts {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width:860px) {
+    .menu_touch li a.logo {
+        margin-right: 20px;
+    }
+
+    .menu_touch li a.contacts {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width:830px) {
+    .menu_touch li a {
+        padding: 10px 4px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .toggle {
+        clear: both;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        line-height: 20px;
+        width: 100%;
+        color: #000;
+        border: 1px solid red;
+        background: #eecd37;
+        transition: all 0.1s linear;
+    }
+
+    .toggle:hover {
+        background: #dcbc2d;
+    }
+
+    #checkbox_menu:checked+label .menu_touch li {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.7s linear;
+    }
+
+    #checkbox_menu:checked+label .menu_touch {
+        height: 320px;
+    }
+
+    .menu_touch {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 0px;
+        transition: height 0.3s linear;
+    }
+
+    .menu_touch li {
+        display: flex;
+        align-self: center;
+        width: 95%;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .menu_touch li a {
+        width: 95%;
+        text-align: center;
+        align-self: center;
+        align-content: center;
+    }
+
+    .menu_touch li a.logo {
+        margin-right: 0px;
+    }
+
+    .menu_touch li a.contacts {
+        margin-right: 0px;
+    }
+}
+
+/* - Урок 2 - Flexbox для каждого - Блок 2 - Блок с изображением */
+
+@media screen and (max-width:460px) {
+    .apartment_contacts {
+        flex-direction: column;
+    }
+
+    .apartment_img_and_text:nth-child(1) {
+        padding-right: 57px;
+    }
+
+    .apartment_text p {
+        font-size: 28px;
+        line-height: 30px;
+    }
+}
+
+
+/* Урок 3 - Адаптивный макет - Блок Статистика - Медиазапросы */
+
+@media screen and (max-width:660px) {
+    .statistic_content {
+        flex-direction: column;
+    }
+
+    .block_statistic {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        /* border: 1px solid green; */
+    }
+}
+
+@media screen and (max-width:420px) {
+    .statistic_content {
+        flex-direction: column;
+    }
+
+    .statistic_right {
+        margin: 0 auto;
+    }
+
+    .statistic_line {
+        flex-direction: column;
+    }
+}
+
+/* - Урок 4 - CSS Grid простыми словами - Блок room - Делал на флексах - */
+
+@media screen and (max-width: 340px) {
+    .price_right {
+        display: none;
+    }
+}
+
+@media screen and (max-width:780px) {
+
+    .submit_search_all {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width:510px) {
+    .submit_search {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .submit_search_all {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width:490px) {
+    .submit_search_all {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .input_search {
+        width: 90%;
+        background: none;
+        padding: 10px;
+    }
+
+    .submit_search {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .submit_search_all {
+        width: 90%;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    form.desktop {
+        display: none;
+    }
+
+    form.mobile {
+        display: flex;
+    }
+}
+
+/* Урок 5 - Java Script подключаем - Блок works */
+
+/* Для данного блока медиазапросов нет */
+
+
+/* Урок 6 - Быстро на flexbox - Блок сервис - service - Медиазапросы */
+
+@media screen and (max-width:600px) {
+    .content_service {
+        flex-direction: column;
+    }
+
+    .service_right {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+}
+
+/* Урок 7 - Flexbox блоки - Блок агенты - agents - Медиазапросы */
+
+@media screen and (max-width:696px) {
+    .item_card_agent:nth-child(3) {
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width:290px) {
+    .card_agent_bottom {
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+}
+
+
+/* Урок 8 - Адаптивность под экран iphoneX - блок awesome - Делал на флексах - Медиазапросы */
+
+@media screen and (max-width:660px) {
+    .line_awesome_1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .awesome_right_text {
+        margin-left: 0px;
+    }
+
+    .line_awesome_left {
+        width: 80%;
+    }
+
+    .line_awesome_right {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:620px) {
+    .awesome_center_block {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:460px) {
+    .img_and_text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img_and_text img {
+        display: none;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .line_awesome_left {
+        width: 96%;
+    }
+
+    .line_awesome_right {
+        width: 96%;
+    }
+
+    .lines_awesome {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+
+@media screen and (max-width:660px) {
+    .line_awesome_2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .line_awesome_2 .awesome_right_text {
+        margin-right: 0px;
+    }
+
+    .line_awesome_left {
+        width: 80%;
+    }
+
+    .line_awesome_right {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:660px) {
+    .line_awesome_3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .line_awesome_3 .awesome_right_text {
+        margin-right: 0;
+    }
+
+    .line_awesome_left {
+        width: 80%;
+    }
+
+    .line_awesome_right {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:410px) {
+    .block_link a.desktop {
+        display: none;
+    }
+
+    .block_link a.mobile {
+        display: block;
+    }
+
+    .awesome_center_block_link {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width:280px) {
+    .block_link a {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Урок 9 - Footer заканчиваем сайт - Делал на flexbox-ах - Медиазапросы */
+
+@media screen and (max-width:660px) {
+    .content_footer {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .footer_top {
+        flex-direction: column;
+    }
+
+    .footer_top_left {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .footer_top_right {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .footer_top_right {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .input_text {
+        width: 120px;
+    }
+
+    .input_text {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .input_button {}
+
+    .footer_top_left h2 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+}
+
+
+@media screen and (max-width:790px) {    
+    .footer_bottom {        
+        flex-direction: column;
+    }
+
+    .footer_bottom_left {
+        width: 100%;
+    }
+    .footer_bottom_right {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:520px) { 
+    .footer_bottom_right {
+       /* flex-direction: column; */
+       flex-wrap: wrap;
+    
+    }
+
+    .bottom_right_content {
+       width: 180px; 
+       /* border: 1px solid red; */
+    }
+}
